@@ -38,6 +38,7 @@ router.get('/profile', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(
             req.session.user_id)
+            console.log('still here ');
         const user = userData.get({ plain: true });
 
         const runData = await Run.findAll({
